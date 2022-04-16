@@ -24,5 +24,5 @@
 - 커넥션 풀: 부트 기본은 HikariCP  
 - WEB(thymeleaf)
 - 로깅 SLF4J & LogBack  
-- 테스트  
+- 테스트
 
