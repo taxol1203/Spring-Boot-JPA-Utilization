@@ -22,6 +22,7 @@
 
 - H2 데이터베이스 클라이언트  
 - 커넥션 풀: 부트 기본은 HikariCP  
-- WEB(thymeleaf)  
+- WEB(thymeleaf)
 - 로깅 SLF4J & LogBack  
 - 테스트  
+

@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">  <!-- namespace에 thymeleaf를 쓴다고 선언-->
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'안녕!!~~ ' + ${data}" >안녕하세요. 손님</p>     <!-- thymeleaf의 장점 : 서버 side 랜더링하면 data가 불러오고, 순수 html 랜더링하면 뒤에 안녕하세요. 손님이 나온다.-->
+</body>
+</html>
