@@ -19,10 +19,13 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'		// spring boot가 알아서 라이브러리 정보를 가져온다.
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'		// 개발할 때, 엄청 도움되는 툴. ex) 템플릿을 변경하고 서버를 재실행 안해도 바로 적용 가능
+
+	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0")	// sql logging
+
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
