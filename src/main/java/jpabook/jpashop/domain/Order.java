@@ -30,6 +30,6 @@ public class Order {
 
     private LocalDateTime orderDate;        // 주문 시간
 
-    @Enumerated(EnumType.STRING)        // 주의! - Enum은 해당 어노테이션을 쓰자자
-   private OrderStatus orderStatus;    // 주문상태 - [ORDER, CANCEL]
+    @Enumerated(EnumType.STRING)        // 주의! - Enum은 해당 어노테이션을 쓰자
+    private OrderStatus status;    // 주문상태 - [ORDER, CANCEL]
 }
