@@ -24,7 +24,7 @@ public class Category {
             inverseJoinColumns = @JoinColumn(name = "item_id")) // category_item의 item_id을 매핑
     private List<Item> items = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")        // 여러명의 자식이 하나의 부모를 바라보므로
     private Category parent;
 
