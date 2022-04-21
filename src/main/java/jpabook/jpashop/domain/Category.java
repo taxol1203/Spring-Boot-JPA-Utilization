@@ -30,4 +30,10 @@ public class Category {
 
     @OneToMany(mappedBy = "parent")         // child 테이블은 parent 테이블에 의해 mapped 되었다는 뜻
     private List<Category> child = new ArrayList<>();
+
+    // 연관관계 메서드 //
+    public void addChildCategory(Category child){           // 해당 코드가 이해는 안됨됨
+       this.child.add(child);
+       child.setParent(this);
+    }
 }
