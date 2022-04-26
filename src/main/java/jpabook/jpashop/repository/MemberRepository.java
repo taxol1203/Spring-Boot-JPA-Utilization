@@ -11,14 +11,14 @@ import java.util.List;
 public class MemberRepository {
 
     @PersistenceContext             // JPA가 제공하는 기능             -> 이거 지우고, RequiredArgsConstructor 넣어도 댐( 대신 final 넣어야한다!), Autowired로는 안된다
-    private EntityManager em;       // spring이 EntityManager를 찾아 DI
+    private EntityManager em;       // springboot가 EntityManager가 자동으로 DI 해준다. -> stater-data-jpa dependency가 주입해 줌
 
     public void save(Member member){
         em.persist(member);         // EM이 member를 알아서 저장
     }
 
     public Member findOne(Long id){
-        return em.find(Member.class, id);
+        return em.find(Member.class, id);       // member를 저장하고 id 값을 반환한다. [ Commend와 query를 분할해라 ]
     }
 
     public List<Member> findAll(){  // 전체 조회
