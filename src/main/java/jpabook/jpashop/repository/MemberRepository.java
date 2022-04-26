@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class MemberRepository {
 
-    @PersistenceContext             // JPA가 제공하는 기능
+    @PersistenceContext             // JPA가 제공하는 기능             -> 이거 지우고, RequiredArgsConstructor 넣어도 댐( 대신 final 넣어야한다!), Autowired로는 안된다
     private EntityManager em;       // spring이 EntityManager를 찾아 DI
 
     public void save(Member member){
