@@ -35,9 +35,9 @@ class MemberServiceTest {
         //  em.flush();         // 테스트를위한 flush, jpa는 flush를 수행하면 insert가 된다.
         //then
         assertEquals(member, memberRepository.findOne(savedId));
-    }   
-    
-    @Test
+    }
+
+    @Test       // junit5 에서는 @Test(expected = ) 사용 불가
     public void find_Duplicate_User() throws Exception {
         //given
         Member member1 = new Member();
