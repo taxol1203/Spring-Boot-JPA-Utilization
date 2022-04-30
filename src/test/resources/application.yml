@@ -1,0 +1,23 @@
+# test 폴더의 내부에 있는 yml이다. 따라서, 기존 main의 yml이 아닌 해당 yml을 테스트로 사용한다.
+
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:test       # 기존의 외부 DB 대신 메모리 DB 사용
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: create  # Auto create table
+#    properties:
+#      hibernate:
+#        # show_sql : true
+#        format_sql: true
+        # 다만, spring boot는 별도의 설정이 없으면 알아서 인터널 메모리 db를 사용한다.
+
+logging:
+  level:
+    org.hibernate.SQL: debug  # it will show all logs that hibernate made
+    org.hibernate.type: trace
