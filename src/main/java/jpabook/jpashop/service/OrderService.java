@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -29,6 +31,7 @@ public class OrderService {
      * @param count
      * @return orderId
      */
+    @Transactional
     public Long order(Long memberId, Long itemId, int count){
         // 엔티티 조회
         // 입력으로 주어진 member와 item의 id로 객체를 찾는다.
@@ -54,5 +57,28 @@ public class OrderService {
         return order.getId();
     }
 
+    /**
+     * 주문 삭제
+     *
+     * 여기서 중요한 것!
+     * cancel을 하면, OrderStatus가 Cancel로 변하고, item의 개수(stock)가 올라간다.
+     * 일반 sql이었다면 비즈니스 로직에 해당 값을 update하는 로직이 필요하지만
+     * JPA를 활용하면, entity의 데이터를 변경하면, jpa가 변화를 감지하여(dirty checking, 변경 내역 감지)를 하여
+     * 변경된 내역들에 대하여 update 쿼리가 자동으로 실행한다.
+     * @param orderId
+     */
+    @Transactional
+    public void cancelOrder(Long orderId){
+        // 엔티티 조회
+        Order order = orderRepository.findOne(orderId);
 
+        // 삭제
+        order.cancel();
+    }
+
+    /*
+    public List<Order> findOrders(OrderSearch orderSearch){
+        return orderRepository.findAll(orderSearch);
+    }
+    */
 }
