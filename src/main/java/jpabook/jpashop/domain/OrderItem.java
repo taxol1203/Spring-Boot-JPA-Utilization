@@ -26,6 +26,8 @@ public class OrderItem {
     private int orderPrice;        // 주문 가격, 이미 item이 있는데 왜? => 할인 받을 수도 있으니
     private int count;             // 주문 수량량
 
+    protected OrderItem() {    }        // 기본 생성자는 사용 못하게 제약한다. why? 생성 메서드가 있기 때문. 이런 방식으로 제약하면서 코딩하는 것이 좋다.
+
     //==생성 메서드==//
     public static OrderItem createdOrderItem(Item item, int orderPrice, int count) {
         OrderItem orderItem = new OrderItem();

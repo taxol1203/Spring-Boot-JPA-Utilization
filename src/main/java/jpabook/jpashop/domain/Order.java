@@ -1,6 +1,8 @@
 package jpabook.jpashop.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,6 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)      // 생성자를 protected로 만든다. -> createOrder와 같이 생성 메서드 외에는 생성자를 허용하지 않는다는 뜻
 public class Order {
 
     @Id @GeneratedValue
