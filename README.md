@@ -28,5 +28,7 @@
 
 ### 외부 라이브러리
 - spring-boot-data-source-decorator  
-  : hibernate SQL 실행 파라미터를 로그로 남기기 위해 사용
-- 
+  -> hibernate SQL 실행 파라미터를 로그로 남기기 위해 사용
+- bootstrap v4.3.1  
+  -> css, js 제공  
+  -> https://getbootstrap.com/docs/4.3/getting-started/download/
